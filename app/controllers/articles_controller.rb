@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 	def index
+		@articles = Article.all
 	end
 	
 	def show
@@ -12,9 +13,36 @@ class ArticlesController < ApplicationController
 
 	def create		
 		@article = Article.new(article_params)
-		@article.save
-		redirect_to @article
+		if @article.save
+			flash[:notice] = "article created."
+			redirect_to @article
+		else
+			flash[:notice]  = "error occured."
+			render "new"
+		end	
 	end
+
+	def edit
+		@article = Article.find(params[:id])
+	end
+	
+	def update
+		@article = Article.find(params[:id])
+		if @article.update(article_params)
+			flash[:notice] = "article updated."
+			redirect_to :root
+		else
+			flash[:notice] = "error occured."
+			render "edit"
+		end		
+	end
+
+	def destroy
+		@article = Article.find(params[:id])
+		@article.destroy
+		flash[:notice] = "article #{params[:id]} deleted."
+		redirect_to :root
+	end	
 
 	private
 		def article_params
