@@ -7,6 +7,10 @@
   <strong>Content:</strong>
   <%= @article.content %>
 </p>
+<div>
+  <h2>Comments:</h2>
+  <%= render @article.comments %>
+    
 <h2>Add a comment:</h2>
 <%= form_for @comment, url: article_comments_path(@article.id) do |form| %>
   <p>
@@ -21,6 +25,7 @@
     <%= form.submit %>
   </p>
 <% end %>
+
 <p><%= link_to "Edit", edit_article_path %></p>
 <p><%= link_to "Delete", article_path, method: :delete, data: { confirm: 'Are you sure?'} %></p>
 <p><%= link_to "Back", articles_path %></p>

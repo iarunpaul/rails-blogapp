@@ -1,4 +1,4 @@
-<h1>Edit Article<h1>
+<h1> Edit Article </h1>
 <%= form_for @article do |form| %>
 
   <% if @article.errors.any? %>
@@ -29,5 +29,5 @@
     <%= form.submit %>
   </p>
 <% end %>
-<p> <%= link_to "Delete", article_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<p> <%= link_to "Delete", article_path, method: :delete, data: {confirm: 'Are you sure?'} %></p>
 <p><%= link_to "Back", articles_path %></p>
