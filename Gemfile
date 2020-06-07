@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # gem for cleaner rails console
 gem 'hirb', '~> 0.7.3'
+# bootstrap for styling views
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+# fontawesome for scalable vector fonts
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
