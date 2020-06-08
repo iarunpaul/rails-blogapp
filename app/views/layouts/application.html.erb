@@ -10,8 +10,8 @@
 
   <body>
   	<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
+  <div class="container flash-container">
+    <%= content_tag :div, msg, class:"alert alert-#{type}" %>
   </div>
 <% end %>
 <%= render 'shared/navbar' %>

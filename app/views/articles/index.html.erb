@@ -1,26 +1,21 @@
-<% if current_user %>
-  <%= current_user.email %>
-  <%= link_to "Log Out", session_path("current"), method: :delete %>
-<% else %>
-  <%= link_to "Sign Up", new_user_path %>
-  <%= link_to "Log In", new_session_path %>
- <% end %>
-<h1>Articles List</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th colspan="2"></th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.content %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
-<p><%= link_to "Create Article", new_article_path %></p>
+<div class="container">
+  <h1 class="text-center">Articles</h1>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <p><%= link_to "Create Article", new_article_path, class:'btn btn-warning' %></p>
+      <% @articles.each do |article| %>
+        <div class="well <%= cycle('white-bg', '') %>">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="text-center"><%= article.title %></h4>
+              <p><%= article.content %> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <span><%= link_to 'Read', article_path(article), class:'btn btn-primary' %></span>
+              <span><%= link_to 'Edit', edit_article_path(article), class:'btn btn-info' %></span>
+              <span><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
