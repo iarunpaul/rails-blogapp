@@ -9,12 +9,13 @@
   </head>
 
   <body>
-  	<% flash.each do |type, msg| %>
+
+<%= render 'shared/navbar' %>
+<% flash.each do |type, msg| %>
   <div class="container flash-container">
     <%= content_tag :div, msg, class:"alert alert-#{type}" %>
   </div>
 <% end %>
-<%= render 'shared/navbar' %>
     <%= yield %>
   </body>
 </html>

@@ -65,3 +65,17 @@ background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, F
 }
 
 
+// Flash Styling
+
+.flash-container {
+    width: 100%;
+    position: absolute;
+}
+
+.alert  {
+    margin-top: -20px;
+    border-color: #adafe8;
+    text-align: center;
+}
+
+
