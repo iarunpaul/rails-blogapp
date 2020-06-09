@@ -1,28 +1,20 @@
-<div class="container">
-	<h2 class="text-center">
-  	<strong><%= @article.title %></strong>
-	</h2>
-	<div class="row">
-		<div class="col-md-8">
-			<small>Created : <i><%= @article.created_at %></i></small>
-		 	<small>Updated : <i><%= @article.updated_at %></i></small>
-		 	<div class="article-content">
-		 		<p><%= @article.content %></p>
-		 	</div>
-		 	<div class="article-tools">
-			 	<span class="btn btn-default"><%= link_to "Back", articles_path %></span>&nbsp;
-				<span class="btn btn-default"><%= link_to "Edit", edit_article_path %></span>&nbsp;
-				<span class="btn btn-default"><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'} %></span>
-			</div>
-			<div class="container">
-				<h4><strong> Add Comments: </strong></h4>
-				<%= render 'comments/form' %>
-			</div>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+ 
+<p><%= link_to "Edit", edit_article_path %></p>
+<p><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'} %></p>
+<p><%= link_to "Back", articles_path %></p>
+   
 
-			<div class="container">
-				<h4><strong>Comments:</strong></h4>
-				<%= render @article.comments %>
-			</div>
-		</div>
-	</div>
-</div>
+<h2>Comments:</h2>
+<%= render @article.comments %>
+
+<h2> Add Comments: </h2>
+<%= render 'comments/form' %>

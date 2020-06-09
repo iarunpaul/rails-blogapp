@@ -15,8 +15,3 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-
-// Fade out effect for flash
-$(document).on('turbolinks:load', function(){
-	$('.flash-container').fadeOut(4000).delay(1000);
-});
