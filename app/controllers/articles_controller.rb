@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
 	end
 
 	def create
-		@article = Article.new(article_params)
+
+		@article = Article.new(@a)
 		if @article.save
 			flash[:success] = "article created."
 			redirect_to @article
@@ -44,6 +45,12 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		flash[:warning] = "article #{params[:id]} deleted."
 		redirect_to :root
+	end
+
+	def mercury_update
+		article = Article.find(params[:id])
+		# ...
+		render text: ""
 	end
 
 	private

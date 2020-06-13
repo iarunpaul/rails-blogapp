@@ -1,20 +1,21 @@
 <p>
   <strong>Title:</strong>
-  <%= @article.title %>
+  <span id="pages_name" data-mercury="full"><%= render plain: @article.title %></span>
 </p>
- 
+
 <p>
   <strong>Content:</strong>
-  <%= @article.content %>
+  <span id="pages_content" data-mercury="full"><%= render plain: @article.content %></span>
 </p>
- 
+
 <p><%= link_to "Edit", edit_article_path %></p>
 <p><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'} %></p>
 <p><%= link_to "Back", articles_path %></p>
-   
+
 
 <h2>Comments:</h2>
 <%= render @article.comments %>
 
 <h2> Add Comments: </h2>
 <%= render 'comments/form' %>
+<p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_page_path(@article)} %></p>

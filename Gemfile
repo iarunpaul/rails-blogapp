@@ -37,6 +37,8 @@ gem 'hirb', '~> 0.7.3'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # fontawesome for scalable vector fonts
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+# Mercury editor
+gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
