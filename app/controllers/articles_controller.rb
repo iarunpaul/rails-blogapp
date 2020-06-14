@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :authenticate_user, only: [:edit, :new, :create, :update, :destroy]
+	#before_action :authenticate_user, only: [:edit, :new, :create, :update, :destroy]
 	def index
 		@articles = Article.all
 	end
@@ -40,17 +40,19 @@ class ArticlesController < ApplicationController
 		end
 	end
 
+	def mercury_update
+	  article = Article.find(params[:id])
+	  article.title = params[:content][:title][:value]
+	  article.content = params[:content][:content][:value]
+	  article.save!
+	  render plain: ""
+	end
+
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
 		flash[:warning] = "article #{params[:id]} deleted."
 		redirect_to :root
-	end
-
-	def mercury_update
-		article = Article.find(params[:id])
-		# ...
-		render text: ""
 	end
 
 	private

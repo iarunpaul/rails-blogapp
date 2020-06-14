@@ -1,11 +1,16 @@
+<div class= "row">
+	<div class="well">
+		<div class="col-md-6">
+		  <h4><strong>Commenter:</strong> <span><%= comment.commenter %></span></h4>
+		</div>
+		<div class = "col-md-6">
+		  <h4><strong>Comment:</strong> <span><%= comment.comment %></span></h4>
+		</div>
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-  <strong>Comment:</strong>
-  <%= comment.comment %>
+	<%= link_to "Delete comment", article_comment_path(@article, comment), method: :delete, data: {confirm: 'Are you sure?'}, class:'btn btn-danger btn-sm' %>
 </p>
-<p>
-	<%= link_to "Delete comment", article_comment_path(@article, comment), method: :delete, data: {confirm: 'Are you sure?'} %>
-</p>	
 
-	
+	</div>
+</div>
+
+

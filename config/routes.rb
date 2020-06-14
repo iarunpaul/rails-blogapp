@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	resources :articles do
+		member { post :mercury_update }
 		resources :comments
 		end
-	resources :pages do
-  member { post :mercury_update }
-	end
-	root 'pages#index'
-	get 'pages/show', to: 'pages#index'
+		# put 'articles/:id/mercury_update', to: 'articles#mercury_update'
+	# resources :pages do
+  	# member { post :mercury_update }
+	# end
+	root 'articles#index'
+
 end
