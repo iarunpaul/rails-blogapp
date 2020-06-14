@@ -1,35 +1,30 @@
-<div class = "container text-center">
-  <h2>
-  <span id="title" data-mercury="full"><%== @article.title %></h2>
-  </strong>
-</div>
-
-<div class = "well container">
-  <strong>Content:</strong>
-  <span id="content" data-mercury="full"><%== @article.content %></span>
-</div>
-
-<div class= "container">
-	<span><%= link_to "Edit", edit_article_path, class: 'btn btn-primary'%></span>
-	<span><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %></span>
-	<span><%= link_to "Back", articles_path, class: 'btn btn-default' %></span>
-</div>
 <div class="container">
-	<div class="well">
-		<h4> Add Comments: </h4>
-
-		<%== render 'comments/form' %>
-		<p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_article_path(@article)} %></p>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="mercury-edit-link"><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_article_path(@article)}, class:'btn btn-info' %></div>
+			<div class = "article-title text-center">
+			  <h2><span id="title" data-mercury="full"><%== @article.title %></span></h2>
+			</div>
+			<div class = "article-content">
+				<div class="well">
+			  	<div id="content" data-mercury="full"><%== @article.content %></div>
+			  	<div class= "article-edit-links container">
+			  		<!--We don't need any edit link as we accomplish editing by Mercury-->
+						<!-- <span><%= link_to "Edit", edit_article_path, class: 'btn btn-primary btn-sm'%></span> -->
+						<span><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></span>
+						<span><%= link_to "Back", articles_path, class: 'btn btn-default btn-sm' %></span>
+					</div>
+				</div>
+			</div>
+			<div class="article-comments-form">
+				<h4> Add Comments: </h4>
+				<%== render 'comments/form' %>
+			</div>
+			<div class= "article-comments">
+				<h4>Comments:</h4>
+				<%== render @article.comments %>
+			</div>
+		</div>
 	</div>
-</div>
-
-<div class= "container">
-
-		<h3>Comments:</h3>
-		<%== render @article.comments %>
-
-</div>
-
-
 </div>
 
