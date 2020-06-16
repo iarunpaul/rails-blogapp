@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="well">
-          <%= form_for @article do |form| %>
+          <%= form_for(@article, url: user_articles_path(params[:user_id])) do |form| %>
 
           	<% if @article.errors.any? %>
               <div id="error_explanation">

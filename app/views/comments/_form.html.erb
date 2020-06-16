@@ -1,9 +1,6 @@
 <div class="well">
   <%= form_for @comment, url: article_comments_path(@article.id) do |form| %>
-    <div class="form-group">
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter, class:'form-control' %>
-    </div>
+    <%= hidden_field_tag 'userid', current_user.id %>
     <div class="form-group">
       <%= form.label :comment %><br>
       <%= form.text_area :comment, class:'form-control' %>

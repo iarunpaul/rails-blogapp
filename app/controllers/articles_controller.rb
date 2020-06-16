@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :authenticate_user, only: [:new, :create, :mercury_update, :destroy]
+	before_action :authenticate_user, only: [:new, :create, :mercury_update, :index, :destroy]
 	def index
 		@articles = Article.all
 	end
@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 		@comment = Comment.new
+		@articleuser = User.find(@article.user_id)
 	end
 
 	def new
@@ -17,6 +18,7 @@ class ArticlesController < ApplicationController
 		# We are commenting the form creation of articles to make use of
 		# Mercury editing
 		@article = Article.new#(article_params)//we don't use any mass assignment
+		@article.user_id = params[:user_id]
 		@article.title = params[:article][:title]
 		@article.content = "Please click edit and start posting..."
 		if @article.save

@@ -1,6 +1,0 @@
- <p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: { save_url: pages_path } %></p>
-<h1><span id="name" data-mercury="full"><%=  render plain: @page.name.html_safe %></span></h1>
-   <div id="content" data-mercury="full"><%= render plain: @page.content.html_safe %></div>
-
-
-<!-- mercury_update_page_path(@page) -->

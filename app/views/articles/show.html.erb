@@ -1,16 +1,21 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="mercury-edit-link"><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_article_path(@article)}, class:'btn btn-info' %></div>
+			<% if current_user == @articleuser %>
+				<div class="mercury-edit-link"><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_article_path(@article)}, class:'btn btn-info' %></div>
+			<% end %>
 			<div class = "article-title text-center">
 			  <h2><span id="title" data-mercury="full"><%== @article.title %></span></h2>
 			</div>
+			<h6><i><%== @articleuser.email %></i></h6>
 			<div class = "article-content">
 				<div class="well">
 			  	<div id="content" data-mercury="full"><%== @article.content %></div>
 			  	<div class= "article-edit-links container">
-			  		<!--We don't need any edit link as we accomplish editing by Mercury-->
-						<!-- <span><%= link_to "Edit", edit_article_path, class: 'btn btn-primary btn-sm'%></span> -->
+			  		<% comment do %>
+				  		We don't need any edit link as we accomplish editing by Mercury
+							<span><%= link_to "Edit", edit_article_path, class: 'btn btn-primary btn-sm'%></span>
+						<% comment end %>
 						<span><%= link_to "Delete", article_path(@article.id) , method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm' %></span>
 						<span><%= link_to "Back", articles_path, class: 'btn btn-default btn-sm' %></span>
 					</div>

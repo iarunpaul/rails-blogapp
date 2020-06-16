@@ -20,11 +20,8 @@
 
 /* Navbar Styling*/
 /*Navbar Gradient*/
-.navbar {//Gradient provided by @ighosh at UIGradients.com
-	background: #283c86;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.navbar {
+    background: #9b111e;
 }
 
 // Navbar Styles
@@ -46,10 +43,10 @@ background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, F
 .navbar-default .navbar-toggle {
     border : 2px solid white;
     &:hover {
-        background-color:#0072ff;
+        background-color:#FC354C;
     }
     &:focus {
-        background-color:#0072ff;
+        background-color:#0ABFBC;
     }
 }
 
@@ -58,10 +55,25 @@ background: linear-gradient(to right, #45a247, #283c86); /* W3C, IE 10+/ Edge, F
 .navbar-default .navbar-nav > li > a {
   color: white;
   &:hover, &:active {
-    color: white;
+    color: black;
     opacity: 0.75;
-    background-color: #366f66;
+    background-color: #FC354C;
   }
+}
+
+// Homepage styles
+
+.home-callout{ //Gradient provided by @ighosh at UIGradients.com
+    background: #FC354C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.home-callout{
+    color: white;
+    margin-top: -20px;
+    text-align: center;
+    padding: 50px 0 100px;
+
 }
 
 // Article show page styling
