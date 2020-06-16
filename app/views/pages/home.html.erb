@@ -1,5 +1,33 @@
 <div class="home-callout text-center container-fluid">
-  <h1>Welcome to my Open Blog on Ruby on Rails</h1>
-  <h2>Where anybody can write a blog on ease!</h2>
-  <h3>All you need is an Account Sign up</h3>
+  <h1><span data-mercury="full">Welcome to my Open Blog on Ruby on Rails</span></h1>
+  <h2><span data-mercury="full">Where anybody can write a blog on ease!</span></h2>
+  <h3><span data-mercury="full">All you need is an Account Sign up</span></h3>
+</div>
+<div class="container home-signup-links">
+  <div class="row">
+    <% if current_user %>
+      <div class="col-md-6 home">
+        <div class="well">
+          <h2 class="text-center">Now create a Real Article</h2>
+            <p class="text-center">Create an Article using Mercury Editor</p>
+            <%= link_to "Create your Article", new_user_article_path(current_user), class: 'button btn btn-default btn-lg btn-block' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="col-md-6 home">
+        <div class="well">
+          <h2 class="text-center">Sign Up</h2>
+          <h4>Sign up to see how to create an Article using Mercury editor.</h4>
+          <%= link_to "Sign up to Create Article", new_user_path, class: 'button btn btn-default btn-lg btn-block' %>
+        </div>
+      </div>
+    <% end %>
+      <div class="col-md-6 home">
+        <div class="well">
+          <h2 class="text-center">Mercury Demo</h2>
+          <p class="text-center">You can see how it works...</p>
+          <%= link_to 'DEMO', "/editor" + request.path, class: 'button btn btn-default btn-lg btn-block' %>
+        </div>
+      </div>
+  </div>
 </div>

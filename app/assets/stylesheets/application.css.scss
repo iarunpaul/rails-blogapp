@@ -17,7 +17,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+//Background image for body
 
+body {
+ background-image: url("Ruby.jpg");
+}
 /* Navbar Styling*/
 /*Navbar Gradient*/
 .navbar {
@@ -27,11 +31,12 @@
 // Navbar Styles
 .navbar{
     border: none;
+    border-radius: unset;
 }
 
 // Navbrand style
 .navbar-brand {
-    font-family:"Open Sans", sans-serif;
+    font-family: cursive, "Open Sans", sans-serif;
     font-weight: 800;
 }
 // Toggle button styles
@@ -50,6 +55,15 @@
     }
 }
 
+// Navbar Collapse
+
+.navbar-collapse{
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    font-family: monospace;
+}
+
 // Nav brand and items Styles
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
@@ -61,19 +75,81 @@
   }
 }
 
+// Flash message styling
+.flash-container{
+    position: absolute;
+    width: 100%;
+}
+
+.alert{
+  margin-top: -20px;
+  text-align: center;
+}
+
 // Homepage styles
 
-.home-callout{ //Gradient provided by @ighosh at UIGradients.com
-    background: #FC354C;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #0ABFBC, #FC354C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.home-callout{
+.home-callout{//Gradient provided by @ighosh at UIGradients.com
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dd1818, #333333);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
     margin-top: -20px;
     text-align: center;
     padding: 50px 0 100px;
 
+}
+
+.home-signup-links {
+  margin-top: 30px;
+
+}
+.home > .well {
+    min-height: 200px;
+    background-color: black;
+    color:white;
+}
+
+// Home page buttons styling
+
+.button{
+  position: relative;
+  background: #1a2a6c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  padding: 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {//Gradient provided by @ighosh at UIGradients.com
+  content: "";
+  background: #1a2a6c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:hover {
+ background: #FC354C;
+}
+
+.button:hover:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }
 
 // Article show page styling
@@ -91,4 +167,40 @@
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Sticky footer styles-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  //height: 40px;
+  background-color: #9b111e;
+}
+
+
+.footer-box {
+  width: auto;
+  max-width: 680px;
+  padding: 5px 15px;
+}
+.footer-box .text-muted {
+  color:white;
+  margin: 5px 0;
+}
+
+.truncate-overflow {
+    line-height: 1.5em;
+    height: 3em;       /* height is 2x line-height, so two lines will display */
+    overflow: hidden;  /* prevents extra lines from being visible */
 }

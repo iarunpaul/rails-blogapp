@@ -59,9 +59,13 @@ class ArticlesController < ApplicationController
 
 	def destroy
 		@article = Article.find(params[:id])
-		@article.destroy
-		flash[:warning] = "article #{params[:id]} deleted."
-		redirect_to :root
+		if current_user.id == @article.user_id
+			@article.destroy
+			flash[:warning] = "Article deleted."
+		else
+			flash[:danger] = "You are only permitted to delete your own articles."
+		end
+		redirect_to :back
 	end
 
 	# We don't use any mass assignment using Mercury editor
