@@ -23,9 +23,14 @@ body {
  background-image: asset_url("Ruby.jpg");
 }
 /* Navbar Styling*/
-/*Navbar Gradient*/
 .navbar {
     background: #9b111e;
+}
+
+//text area resize to vertical only
+
+textarea{
+  resize: vertical;
 }
 
 // Navbar Styles
@@ -51,7 +56,7 @@ body {
         background-color:#FC354C;
     }
     &:focus {
-        background-color:#0ABFBC;
+        background-color:#dd1818;
     }
 }
 
@@ -61,7 +66,8 @@ body {
     border: none;
     box-shadow: none;
     font-size: 16px;
-    font-family: monospace;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: medium;
 }
 
 // Nav brand and items Styles
@@ -124,6 +130,7 @@ body {
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
+  color: white
 }
 
 .button:after {//Gradient provided by @ighosh at UIGradients.com
@@ -157,6 +164,36 @@ body {
     margin-top: 10px;
 }
 
+#edit_link {
+    background-color: #1141a2;
+    width: 100%;
+    color: white;
+    text-shadow: none;
+}
+#create_link {
+    background-color: #8000ff;
+    color: white;
+    text-shadow: none;
+    width: 100%;
+}
+
+//Articles Font style
+.article-title, .article-content, .index-page-header, .index-article-title, .index-page-content{
+  font-family: 'Open Sans', sans-sarif;
+  &.article-title, &.index-page-header{
+    color:white;
+  }
+}
+
+// Login page styling
+#signup-header, #signup-email, #signup-password, #signup-password-confirm,
+#login-header, #login-email, #login-password{
+  color:white;
+}
+
+#content{
+  min-height: 100px;
+}
 //Styling for Mercury contenteditable
 .article-content > .well {
     min-height: 20px;
@@ -195,8 +232,10 @@ body {
   padding: 5px 15px;
 }
 .footer-box .text-muted {
-  color:white;
   margin: 5px 0;
+  &:hover{
+  color:white;
+  }
 }
 
 .truncate-overflow {

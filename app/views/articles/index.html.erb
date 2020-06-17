@@ -1,14 +1,14 @@
 <div class="container">
-  <h1 class="text-center">Articles</h1>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <p><%= link_to "Create Article", new_user_article_path(current_user), class:'btn btn-warning' %></p>
+      <p><%= link_to "Create Your Article", new_user_article_path(current_user),  id:'create_link', class:"btn btn-default" %></p>
+      <h1 class="index-page-header text-center">Articles</h1>
       <% @articles.each do |article| %>
         <div class="well <%= cycle('white-bg', '') %>">
           <div class="row">
             <div class="col-md-12">
-              <h4 class="text-center"><%== article.title %></h4>
-              <p class="truncate-overflow"><%== article.content %> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <h4 class="index-article-title text-center"><%== article.title %></h4>
+              <p class="index-page-content truncate-overflow"><%== article.content %> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
               <span><%= link_to 'Read', article_path(article), class:'btn btn-primary' %></span>
               <span><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></span>
             </div>
