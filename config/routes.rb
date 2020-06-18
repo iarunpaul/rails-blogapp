@@ -5,10 +5,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-	resources :users do
-		resources :articles, only: [:new, :create]
-	end
-	resources :articles, only: [:index, :show, :destroy] do
+	resources :users
+
+	resources :articles, only: [:index, :show, :new, :create, :destroy] do
 		member { post :mercury_update }
 		resources :comments, only: [:index, :new, :create]
 	end

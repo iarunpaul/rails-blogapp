@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <p><%= link_to "Create Your Article", new_user_article_path(current_user),  id:'create_link', class:"btn btn-default" %></p>
+      <p><%= link_to "Create Your Article", new_article_path,  id:'create_link', class:"btn btn-default" %></p>
       <h1 class="index-page-header text-center">Articles</h1>
       <% @articles.each do |article| %>
         <div class="well <%= cycle('white-bg', '') %>">

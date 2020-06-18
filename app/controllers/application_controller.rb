@@ -17,10 +17,11 @@ class ApplicationController < ActionController::Base
   def sign_in(user)
     session[:user_id] = user.id
     flash[:success] = "Successfully Logged In."
-    redirect_to :root
+    redirect_to articles_path
   end
 
 helper_method :current_user
 helper_method :authenticate_user
+helper_method :set_redirect_path
 
 end
