@@ -6,8 +6,12 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@user.save
-		sign_in @user
+		if @user.save
+			sign_in @user
+		else
+			flash[:danger] = "Error occured. Try again"
+			render "new"
+		end
 	end
 
 	private

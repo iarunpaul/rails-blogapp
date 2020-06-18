@@ -5,11 +5,11 @@
 			<%= form_tag sessions_path do %>
 				<div class="form-group">
 					<span id="login-email"><%= label_tag :email %></span>
-					<%= email_field_tag :email, params[:email], class:'form-control' %>
+					<span class="form-control"><%= email_field_tag :email, params[:email] %></span>
 				</div>
 				<div class="form-group">
 					<span id="login-password"><%= label_tag :password %></span>
-					<%= password_field_tag :password, class:'form-control' %>
+					<span class="form-control"><%= password_field_tag :password %></span>
 				</div>
 				<%= submit_tag "Log In", class:'btn btn-primary'%>
 			<% end %>

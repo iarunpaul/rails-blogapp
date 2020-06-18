@@ -41,8 +41,9 @@ textarea{
 
 // Navbrand style
 .navbar-brand {
-    font-family: cursive, "Open Sans", sans-serif;
+    font-family: 'Cedarville Cursive', cursive;
     font-weight: 800;
+    font-size: 24px;
 }
 // Toggle button styles
 
@@ -85,6 +86,7 @@ textarea{
 .flash-container{
     position: absolute;
     width: 100%;
+    z-index: 1;
 }
 
 .alert{
@@ -178,9 +180,9 @@ textarea{
 }
 
 //Articles Font style
-.article-title, .article-content, .index-page-header, .index-article-title, .index-page-content{
+.article-title, .article-content, .index-page-header, .index-article-title, .index-page-content, #add-comments-title, #comments-title{
   font-family: 'Open Sans', sans-sarif;
-  &.article-title, &.index-page-header{
+  &.article-title, &.index-page-header, &#add-comments-title, &#comments-title{
     color:white;
   }
 }
