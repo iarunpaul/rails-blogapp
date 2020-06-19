@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 		if @user.save
 			sign_in @user
 		else
-			flash[:danger] = "Error occured. Try again"
+			flash[:danger] = "SignUp Failed!!"
 			render "new"
 		end
 	end
