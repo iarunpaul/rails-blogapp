@@ -248,7 +248,7 @@ body {
 }
 
 .truncate-overflow {
-    line-height: 1.5em;
-    height: 6em;       /* height is 2x line-height, so two lines will display */
+    line-height: 1.6em;
+    height: 6.4em;       /* height is 2x line-height, so two lines will display */
     overflow: hidden;  /* prevents extra lines from being visible */
 }
