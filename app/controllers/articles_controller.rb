@@ -65,7 +65,7 @@ class ArticlesController < ApplicationController
 		else
 			flash[:danger] = "You are only permitted to delete your own articles."
 		end
-		redirect_to :back
+		redirect_to articles_path
 	end
 
 	# We don't use any mass assignment using Mercury editor

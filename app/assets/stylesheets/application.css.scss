@@ -179,12 +179,15 @@ textarea{
     width: 100%;
 }
 
-//Articles Font style
-.article-title, .article-content, .index-page-header, .index-article-title, .index-page-content, #add-comments-title, #comments-title{
+//Articles Font and color style
+.new-article, .article-title, .article-content, .index-page-header, .index-article-title, .index-page-content, #add-comments-title, #comments-title{
   font-family: 'Open Sans', sans-sarif;
-  &.article-title, &.index-page-header, &#add-comments-title, &#comments-title{
-    color:white;
-  }
+    &.new-article, &.article-title, &.index-page-header, &#add-comments-title, &#comments-title{
+      color:white;
+        &.index-article-title{
+        text-decoration: underline;
+        }
+    }
 }
 
 // Login page styling
